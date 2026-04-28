@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.13"
+          enable-cache: true
+      - name: Sync deps
+        run: uv sync --frozen
+      - name: Build wheel + sdist
+        run: uv build
+      - name: Smoke-test entry points
+        run: |
+          uv run aranet-log --help
+          uv run aranet4-tui --help
+      - name: Import check
+        run: uv run python -c "import aranet_log, aranet_log.logger, aranet_log.tui, aranet_log.launchctl"
+      - uses: actions/upload-artifact@v4
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          name: dist
+          path: dist/

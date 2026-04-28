@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aranet-log"
+version = "0.1.0"
+description = "Log Aranet4 CO₂/temperature/humidity readings to SQLite, with a Textual TUI."
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "Adam Hitchcock", email = "adam@askclara.com" }]
+keywords = ["aranet4", "co2", "sqlite", "textual", "tui"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Home Automation",
+    "Topic :: Terminals",
+]
+dependencies = [
+    "aranet4>=2.6.0",
+    "textual>=8.2.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/northisup/aranet4-tui"
+Issues = "https://github.com/northisup/aranet4-tui/issues"
+
+[project.scripts]
+aranet-log = "aranet_log.logger:main"
+aranet4-tui = "aranet_log.tui:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aranet_log"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/aranet_log", "README.md", "LICENSE", "pyproject.toml"]
