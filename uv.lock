@@ -3,7 +3,17 @@ revision = 3
 requires-python = ">=3.13"
 
 [[package]]
-name = "aranet-tui"
+name = "aranet4"
+version = "2.6.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "bleak" },
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4a/a7/9a05fdb33d1557b169db1270aedeea4ca36b58dff29fb751cce71b9acdc0/aranet4-2.6.0.tar.gz", hash = "sha256:3821fc19d3572b0cbea8c0f913155b215126575f87361f41eb146f0c3c49e01a", size = 19130, upload-time = "2026-02-09T14:59:10.755Z" }
+
+[[package]]
+name = "aranet4-tui"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
@@ -16,16 +26,6 @@ requires-dist = [
     { name = "aranet4", specifier = ">=2.6.0" },
     { name = "textual", specifier = ">=8.2.3" },
 ]
-
-[[package]]
-name = "aranet4"
-version = "2.6.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "bleak" },
-    { name = "requests" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/4a/a7/9a05fdb33d1557b169db1270aedeea4ca36b58dff29fb751cce71b9acdc0/aranet4-2.6.0.tar.gz", hash = "sha256:3821fc19d3572b0cbea8c0f913155b215126575f87361f41eb146f0c3c49e01a", size = 19130, upload-time = "2026-02-09T14:59:10.755Z" }
 
 [[package]]
 name = "bleak"
