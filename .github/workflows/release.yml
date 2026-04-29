@@ -14,7 +14,7 @@ jobs:
       id-token: write     # PyPI Trusted Publishing (OIDC)
     environment:
       name: pypi
-      url: https://pypi.org/p/aranet-log
+      url: https://pypi.org/p/aranet-tui
     steps:
       - uses: actions/checkout@v4
         with:

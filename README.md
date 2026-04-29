@@ -1,4 +1,4 @@
-# aranet-log
+# aranet-tui
 
 Log [Aranet4](https://aranet.com/products/aranet4/) CO₂ / temperature / humidity / pressure
 readings to a local SQLite file, and browse them in a Textual TUI.
@@ -7,13 +7,13 @@ readings to a local SQLite file, and browse them in a Textual TUI.
 
 ```sh
 # one-shot via uvx (no install)
-uvx --from aranet-log aranet-log --scan
-uvx --from aranet-log aranet4-tui
+uvx --from aranet-tui aranet-log --scan
+uvx --from aranet-tui aranet4-tui
 
 # persistent install
-uv tool install aranet-log
+uv tool install aranet-tui
 # or
-pipx install aranet-log
+pipx install aranet-tui
 ```
 
 ## Use

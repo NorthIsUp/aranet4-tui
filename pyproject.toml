@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "aranet-log"
+name = "aranet-tui"
 version = "0.1.0"
 description = "Log Aranet4 CO₂/temperature/humidity readings to SQLite, with a Textual TUI."
 readme = "README.md"
